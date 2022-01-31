@@ -20,7 +20,21 @@
                 <form action="">
                     <label for="ingredientInput">Ingredient: </label>
                     <input id="ingredientInput" name="ingredientInput" type="text">
+                    <label for="quantityInput">Quantity: </label>
+                    <input id="quantityInput" name="quantityInput" type="number">
+                    <select name="measurementSelect" id="">
+                        <option value="cups">Cups</option>
+                        <option value="grams">Grams</option>
+                        <option value="ml">Milliliter</option>
+                        <option value="teaspoons">Teaspoons</option>
+                        <option value="tablespoons">Tablespoons</option>
+                    </select>
+                    <button id="ingredientSubmit">Add Ingredient</button>
                 </form>
+                <div id="ingredientListDiv">
+                    <ul id="ingredientList"></ul>
+                    <button id="removeIngredientButton">Remove Last Item</button>
+                </div>
             </div>
         </section>
     </main>
