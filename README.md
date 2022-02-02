@@ -1,3 +1,40 @@
+## HTML Elements
+- Ingredient Form
+- Ingredient list <ul>
+- Remove button
+
+- Save Form
+- Save button
+
+## Events
+- Submit ingredient
+    - prevent default
+    - get data using formData
+    - create ingredient object: {name, quantity, unit}
+    - Push ingredient object to ingredients array
+    - display the list
+
+- Delete last ingredient
+  - pop last element from the ingredients array
+  - display the list
+
+- Save meal:
+  - prevent default
+  - create meal obj: {name, ingredient count}
+  - push meal to meals array
+  - display the meal list
+
+## Plan of attack:
+- implement html elements
+- acp
+- implement submit ingredient event listener
+- acp
+- implement save meal
+- acp
+
+
+
+
 ## The Golden Rule: 
 
 🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
