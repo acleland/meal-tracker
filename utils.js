@@ -5,3 +5,4 @@ export function renderIngredient(ingredient) {
 export function renderMeal(meal) {
     return `${meal.name}: ${meal.totalIngredients} ingredients`;
 }
+

@@ -1,8 +1,13 @@
 // import functions and grab DOM elements
-import { renderIngredient } from './utils.js';
+import { renderIngredient, renderMeal } from './utils.js';
 const ingredientForm = document.getElementById('ingredientForm');
 const ingredientSubmit = document.getElementById('ingredientSubmit');
 const ingredientList = document.getElementById('ingredientList');
+const mealList = document.getElementById('mealList');
+const mealForm = document.getElementById('mealForm');
+const saveSubmit = document.getElementById('saveSubmit');
+const removeButton = document.getElementById('removeIngredientButton');
+
 
 // let state
 let ingredients = [];
@@ -15,6 +20,15 @@ function renderIngredients() {
         const li = document.createElement('li');
         li.innerText = renderIngredient(ingredient);
         ingredientList.appendChild(li);
+    }
+}
+
+function renderMeals() {
+    mealList.innerHTML = '';
+    for (let meal of meals) {
+        const li = document.createElement('li');
+        li.innerText = renderMeal(meal);
+        mealList.appendChild(li);
     }
 }
 
@@ -31,4 +45,22 @@ ingredientSubmit.addEventListener('click', (e) => {
     ingredientForm.reset();
     renderIngredients();
 });
+
+removeButton.addEventListener('click', () => {
+    ingredients.pop();
+    renderIngredients();
+});
   
+saveSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
+    const mealData = new FormData(mealForm);
+    const meal = mealData.get('meal');
+    meals.push({
+        name: meal,
+        totalIngredients: ingredients.length
+    });
+    ingredients = [];
+    renderIngredients();
+    renderMeals();
+    mealForm.reset();
+});
